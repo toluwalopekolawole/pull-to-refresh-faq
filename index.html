@@ -8,17 +8,221 @@
   <meta property="og:title" content="Pull to Refresh FAQ" />
   <meta property="og:description" content="Frequently asked questions about Pull to Refresh." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pull-to-refresh-faq.vercel.app/" />
+  <link rel="canonical" href="https://pull-to-refresh-faq.vercel.app/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #000000;
+      --text: #ffffff;
+      --muted: #d3d3d3;
+      --accent: #1DA1F2;
+      --line: rgba(255, 255, 255, 0.35);
+    }
+
+    html {
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter Tight", Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .page {
+      width: min(1420px, calc(100% - 72px));
+      margin: 0 auto;
+      padding: 72px 0 88px;
+    }
+
+    .hero {
+      padding-bottom: 72px;
+      margin-bottom: 58px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0 0 72px;
+      padding: 0;
+      text-decoration: none;
+    }
+
+    .brand-logo img {
+      display: block;
+      width: min(82px, 12vw);
+      height: auto;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(52px, 7.1vw, 106px);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      font-weight: 800;
+      max-width: 1220px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 34px;
+    }
+
+    .faq-item {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--accent);
+      transition: border-color 180ms ease;
+    }
+
+    .faq-item[open] {
+      border-color: var(--text);
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 36px 44px;
+      font-family: "Space Mono", monospace;
+      font-weight: 700;
+      font-size: clamp(18px, 1.45vw, 25px);
+      color: var(--text);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      min-height: 96px;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "›";
+      color: var(--accent);
+      font-weight: 700;
+      font-size: clamp(30px, 2.4vw, 42px);
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+
+    .faq-item[open] summary::after {
+      content: "×";
+    }
+
+    .answer {
+      padding: 0 44px 44px;
+      color: var(--muted);
+      font-family: "Inter Tight", Inter, Arial, Helvetica, sans-serif;
+      font-size: clamp(18px, 1.28vw, 23px);
+      line-height: 1.55;
+      max-width: 1280px;
+      font-weight: 400;
+    }
+
+    .answer p {
+      margin: 0 0 24px;
+    }
+
+    .answer p:last-child {
+      margin-bottom: 0;
+    }
+
+    .comma-list {
+      color: var(--muted);
+    }
+
+    .answer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .answer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 92px;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .footer p {
+      margin: 0;
+      font-family: "Space Mono", monospace;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        width: min(100% - 30px, 1420px);
+        padding: 38px 0 62px;
+      }
+
+      .hero {
+        padding-bottom: 44px;
+        margin-bottom: 38px;
+      }
+
+      .brand-logo {
+        margin-bottom: 62px;
+      }
+
+      .brand-logo img {
+        width: min(72px, 20vw);
+      }
+
+      h1 {
+        font-size: clamp(40px, 14vw, 68px);
+        letter-spacing: -0.06em;
+      }
+
+      .faq-list {
+        gap: 22px;
+      }
+
+      .faq-item summary {
+        padding: 22px 20px;
+        font-size: 15px;
+        min-height: 76px;
+      }
+
+      .answer {
+        padding: 0 20px 26px;
+        font-size: 17px;
+      }
+
+      .answer p {
+        margin-bottom: 18px;
+      }
+
+      .footer {
+        margin-top: 58px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <main class="page">
     <header class="hero">
-      <a class="brand-logo" href="https://attentioncapital.beehiiv.com/" aria-label="Return to Pull to Refresh homepage">
-        <img src="./pull-to-refresh-logo.png" alt="Pull to Refresh" />
+      <a class="brand-logo" href="/" aria-label="Return to Pull to Refresh homepage">
+        <img src="data:image/webp;base64,UklGRnALAABXRUJQVlA4IGQLAACQQQCdASoAAQABPpFGnkolpCMhqlXYULASCU3cLaIfOg/7x2lVG+1/2H9vv6N71NWfp34W/ovtp/QDxL5m/Tn2XPH/z//o/2b+y+/X+4/272GfnP/Xe4B/C/5V+lf927AvmA/Xf1wP9j6mv8z/nP9v7gH+y/3XWOegB5bnsf/3L/mekr////p7gH//9tLpB+vX+Y7gvL+wzt29jMrGG1yHfvqjwy+N7a6IpLT0+T3CAlMgdkUlp6fJ7hAAheZEo/qOFQvnOEsBC+OqAkLPlRtPk8AfMx25/05NUeTkO3c4leMkZ1zTRNIxXeRTW4UU9dMCnDsYAubqWx9d6zWaeT7/eZ73YCsOMgYAUh01CvM2yetRrj+mB2DbVkj8UEvPBJD7YTJ3k4dSBnnPrMOd2QkBNXZYaLF7cBQ35kFNCNBafBnpTLILejAWWmvwWXLhL9ohIkrZs+fIorKBR24+U68jyUK6boC5Efy/E+K2IZxolExt2Y2069TL36HEvrgkyOPyOv0GPAaINQtf36OwH/vbRRm0Zf9I9nQiTR6AUGcTjxTNfH3akr5MNmC16c53RKDA1ard0yBR3XnOYJrn5mhgSRJjwaAxlKlF7USamaQjI+TA7Jmxz0QXG1egKABTxsjfEdinJzvIVXhJkq6OVkICUwpYt9ALRO8e5kBuUupDsJWpCAlMgdkUum9Pk9wgJTIHZFJYgAD+/ngAAAALlZnvBOM2ijAPc/v1845l0W6Y6fZYvtmoynFV5yA8gcFksbn55QcXNM8uSRY14U0BIfAJ+GwSIH0yXJob5+6+8kB/cMKxaBFQjVvL9lgzBkJP37BFaB/IIA/izLkgdRcAU5+Ygui//ni0LIPjYC6P+A8r6XA2pEbld2WPs3j7LP0z5CqmNIxL5Mmq24iEjLo4QybcOXkx9t2i216w0Be/8rJlAR5re8eAKGA9OxWyQZvt/EID0sDfzwyC6Ntm4f46Ci9mXr5fh/EraR216+dXfYvsvwv8S8qzH2YUZ/5diLQuKPFE4bHI19u10NSGC181aSam1x0fGtTN2TmzS2z/48fxvB+2zgUWGs7+QAEieylJ9Xzri2THyp7FsMpHEmDD59Df2HWlNURLuz0vAVL2IwagVDpkSn+bjuLWSBprFnQg70FwzFGrAm5QKt77LiHr/m1v6lepnbSZlZdFi93WPlxNpFQReCxqyBfRugkweJ8gLbUIxiqIiLDVrAl7JjJVmqPiwBAy3aoi3Xu6djmQWg7I5SiLSSuxW9sRiP0UiAMBzRAVKK0Wj7NpdvguG2Eln6Nhl/8z05RMnvYDNl1o1AM6bCw/zgn2Ho8R8RuV4kF0F3dF8x45tKgJHhPT7bs/CX2EbVcEbMVhalp4/eNu7KGhJiQ5NxckjoWsVc81nJDJn6Fsg97oDL1f0Idbx8ivAssWiHj+Or1BJhLGZgnJI4BLdkx6fyYj3AlOUagEGqAxT6erth24MoZUGoR2k8xSGt3CzdRSrpEQmPKtINpQQpKdzOEztfcCNcgQZaLnIAq5iUZ2ODzpInC18QgqIHDpIiB5Inc/bu4ddbY8D3oNEORuEKDv5cs7qpZW0/tX6tfaAgau9jTzXrYGYSzRbOeQ4PMJ2PLT6uRVgFVZX+rsr6i/AeK1Z8Hk91poMDhNK+GnZCjvyIrQd9XNZyphmP3x+i5EQN/BtSvjrY7kk9tOcPobHSCzrmqwulmdux7NqwHQMXkfmOZ2X1ZNgCsB/JczKjXqZqj9/efqJfmo6qJwwC6Q78eV5BunrtrNKVMsBwFhuuFv31+ljg5xwrI6EdyHxBeQgRSaFSA7TJgUXGb8pyw+aGVI68mIMsp92vWH17jcrDVZPtXtP/TA1fMyv+6XSLU7hCIT+TV1CA2On0NYOe7yft1pjlbMwGMJ/3cTx9IulK0S8AE/uSKADBWGSdiTv81Jr9GuqyrSpIvit1N4mQzifOArHWN1jhY9e+SfnR7wNoAlCgRCLZgz89jJ4isfBjw6pdEWBpdlmZOGID5Ls9KHFe70us+8p5nHeZIyvX/Mn6Enia/tligtfWkjFB7z20t2ElDLKkMmqxM9zUydxNgSEH8St5A4Bv4Y/6hdd581uVTnpYJJn9IMJPzu5Nw86xehbg7CwZMWfh1O7iNoq2Ubg3recTBTZldlQyAiRQtwyAVlXRJfaHwBvAPmQAvumOOBiolQyxp6amuCf8i9/sNXLiWu8w1ozlo2Ok1A85Uv8IRif4+QXFRt26AvJ/F8HclS4X+eabWMXLg53aPFPCyQC9ZyAtQCTdDDUskUuLiFXKEP5Yz7XxEHT32bi5Cvo5f8EulC6TdWz8a+PuX3mLNXajgq6RxYRpcd6FFVPy+X2HED2ROPWSrEigYx9whRChJzI5aLOnbTKVLjKsv3jTqcmhMCrdMKPzNvxuzg+NoG8XcIUQMmuxFkrK1IipCZDXXxRfNCd/atrRS0ZOcqaUQlslQxrS3w5yw8DX068NsW4u/XSH+UdFalXY16s6/9hqC5XOvFLFq4fxZKXNHJzBuUqJgfKeKdQlXfvfGZDBKzgDpY4hK6NHwxDaJFyb2pE2LwcsG9eEd6DdHMls5wLRCLQwW8BTr0ngJPSGq/wDNRUinE4O4gX0VEGUcO8kRx0KcPkQ3msRloBs+4orXKCYSQP5qxJG4n4mTdQPd3g9Jf5GFCl1WnUPw7XbNSfOqhbB77y3iWR/KG7Q3X0kkih9mehkmRNvhHNTaxvZEhxRNe0EwUKYrcvKYPDd8DCxUCAxUECrUKJIJInaYFCXYuWSpok1HmwjS3W+cLNQPjZxMRVVyM+qSie3Iyixq7d64SwPMdzY/KpxR7pswaxWfBLZIg6w0lFuyVd+mEyrX9QsshSC/EgAwgXlOedNSDCyf6vD5ZL7B7hLQWpPMi3Bc4Vl/LBgYjB4QI/pnACrDsUNfe7p0owCAgQlenrCy/cCqC9yWl9ne9kYpoJyof/DgA7fLiDtf+zRXVkyMVY/NakiQaUjnaxMO3SLSxoHULJbwR3B+139n/nBsVX4NDw9ulLxYZKbCSmXE7teLEm4BBylwirAfr2Josbylb21MTWESAGDMWY2lKWhi/mlvq0yzlsxN2eDtzDeAjbM0Gu3MM4YPHBpw33p2NXhDyxWWTUYaDv9pxoyOBDZnvrvvBvyICXbtLOol9YH95V67t5G0JAtrjvSQOjttRdnOh8JQVCxROX3unYkZtPbg8Ra8Cl9EtjMV1KsCuR7RC2gMMPXljFr9BZ4WT8dpNrNNmDveVj0BSQ8YmI0tsj1VN9JtlN03ioNn3qN+GUAxp/l7kocKTDvDzvvwfRW2KB15/eZftmMGQu6sq8BeaRqcQ9r0K5RABYUTlp89EjlQEJwgnN5YWqAnX7UZnkb8RWh/PbZBi47fjw+NkwawhLiFr4ZGTXsLIQXh15oJIc1PDbQZ8xw+scNkApUWFYEZFsh3kkT6vQ1h+U9Dm2snzr4F2HvWdxeDRFohXOqmZXmGniKnjX+CWlec2jaPTbfuv84QS6+ZYb2ghUOkO9tKtO/5iKCNDaeOKuz3aM8XBhP0P+AzR/Q4L2UbMEpRrZrxP5OnArFsDDjUW9GLiMFTNpwC8UeNwxD5iFOxPrU3zCwYj6sZI+3JmlJH9cEl3EXUZft4zxTq1YnJLnqP1H+8QlFIIdqb1tBenWtwaxCH9uHXQInQ4xJ+RKFE4mSjxiVZBDIl6T2/52ACgv+aqjDjTmXyBOyDRJLmLDjqv/k9Lb+awJ75+gHDOXTSgnVwBpjd4F2eriUHT3FRaVutrrRP21q1VCUMJB9Y7F5CB+c5ibY8aIW1x7BuzUU4xWCWALlH0vknf02EJLw0B65NJO5rSkYffkUdjQ/kzAAAAAAAAAAA=" alt="Pull to Refresh" />
       </a>
 
       <h1>Frequently Asked Questions.</h1>
@@ -135,7 +339,7 @@
       <details class="faq-item">
         <summary>Where can I submit feedback?</summary>
         <div class="answer">
-          <p>You can fill out this quick survey here. Our team reviews reader feedback daily.</p>
+          <p>You can fill out this quick survey <a href="https://form.typeform.com/to/lHsuu98C" target="_blank" rel="noopener noreferrer">here</a>. Our team reviews reader feedback daily.</p>
         </div>
       </details>
 
@@ -201,7 +405,7 @@
     </section>
 
     <footer class="footer">
-      <p>© Pull to refresh 2026</p>
+      <p>© Pull to Refresh 2026</p>
     </footer>
   </main>
 </body>
