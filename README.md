@@ -2,15 +2,24 @@
 
 Static FAQ page for Pull to Refresh.
 
-Upload these files to the existing GitHub repository root:
+Live site:
+
+https://pull-to-refresh-faq.vercel.app/
+
+## Repository files
 
 - `index.html`
 - `styles.css`
 - `README.md`
-- `attention-capital-logo.png`
+- `pull-to-refresh-logo.png`
 
-This version updates the FAQ copy while keeping the approved black background, green borders, aligned smaller logo, and logo link back to:
+## Current design
 
-https://pulltorefresh.beehiiv.com/
+- Black background: `#000000`
+- Blue accent colour: `#1DA1F2`
+- Pull to Refresh logo
+- Updated FAQ questions and answers
+- Typeform feedback link
+- Footer: `© Pull to Refresh 2026`
 
-Vercel will automatically redeploy after the commit.
+Vercel will automatically redeploy the website after the updated files are committed.
