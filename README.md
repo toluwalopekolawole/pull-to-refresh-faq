@@ -1,6 +1,6 @@
-# Attention Capital FAQ
+# Pull to Refresh FAQ
 
-Static FAQ page for Attention Capital.
+Static FAQ page for Pull to Refresh.
 
 Upload these files to the existing GitHub repository root:
 
@@ -11,6 +11,6 @@ Upload these files to the existing GitHub repository root:
 
 This version updates the FAQ copy while keeping the approved black background, green borders, aligned smaller logo, and logo link back to:
 
-https://attentioncapital.beehiiv.com/
+https://pulltorefresh.beehiiv.com/
 
 Vercel will automatically redeploy after the commit.
