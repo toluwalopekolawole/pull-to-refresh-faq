@@ -15,7 +15,7 @@ https://pull-to-refresh-faq.vercel.app/
 
 ## Current design
 
-- Black background: `#000000`
+- Black background: `#131316`
 - Blue accent colour: `#1DA1F2`
 - Pull to Refresh logo
 - Updated FAQ questions and answers
