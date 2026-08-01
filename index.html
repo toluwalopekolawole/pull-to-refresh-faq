@@ -88,7 +88,7 @@
 
     .brand-logo img {
       display: block;
-      width: min(82px, 12vw);
+      width: clamp(280px, 24vw, 360px);
       height: auto;
     }
 
@@ -211,7 +211,8 @@
       }
 
       .brand-logo img {
-        width: min(72px, 20vw);
+        width: min(280px, 78vw);
+        height: auto;
       }
 
       h1 {
@@ -256,16 +257,15 @@
         <img
           src="https://i.ibb.co/pBW0chjW/Pull-to-Refresh-Logo-no-background.png"
           alt="Pull to Refresh"
+          loading="eager"
+          decoding="async"
         />
       </a>
 
       <h1>Frequently Asked Questions.</h1>
     </header>
 
-    <section
-      class="faq-list"
-      aria-label="Frequently Asked Questions"
-    >
+    <section class="faq-list" aria-label="Frequently Asked Questions">
       <details class="faq-item">
         <summary>What is Pull to Refresh?</summary>
 
@@ -284,9 +284,7 @@
             across attention-driven industries.
           </p>
 
-          <p>
-            Published every weekday at 09:00 GMT+1. Free to read.
-          </p>
+          <p>Published every weekday at 09:00 GMT+1. Free to read.</p>
         </div>
       </details>
 
@@ -357,9 +355,7 @@
             acquiring, holding or monetising attention.
           </p>
 
-          <p>
-            These are the industries we currently cover on a daily basis:
-          </p>
+          <p>These are the industries we currently cover on a daily basis:</p>
 
           <p>
             <strong>Monday: Platforms, Feeds &amp; Social Discovery</strong>
@@ -505,9 +501,7 @@
             Productivity Systems, Task Trackers, Focus Modification Software.
           </p>
 
-          <p>
-            This structure gives the newsletter a weekly rhythm:
-          </p>
+          <p>This structure gives the newsletter a weekly rhythm:</p>
         </div>
       </details>
 
